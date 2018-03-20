@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
-import { Logger, Notification, NotificationType, Notifications } from '../ngx/ngx-base';
-import { User, UserService } from '../ngx/ngx-login-client';
+import { Logger, Notification, NotificationType, Notifications } from '../ngx-base';
+import { User, UserService } from '../ngx-login-client';
 
 import { ExtUser, GettingStartedService } from './services/getting-started.service';
 

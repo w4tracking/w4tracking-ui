@@ -3,9 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { Logger } from '../../ngx/ngx-base';
-import { Profile, User, UserService } from '../../ngx/ngx-login-client';
-import { CLARKSNUT_API_URL } from '../../ngx/ngx-clarksnut';
+import { Logger } from '../../ngx-base';
+import { Profile, User, UserService } from '../../ngx-login-client';
+import { W4TRACKING_API_URL } from '../../ngx-w4tracking';
 
 import { cloneDeep } from 'lodash';
 
@@ -32,7 +32,7 @@ export class GettingStartedService implements OnDestroy {
     private http: HttpClient,
     private logger: Logger,
     private userService: UserService,
-    @Inject(CLARKSNUT_API_URL) apiUrl: string) {
+    @Inject(W4TRACKING_API_URL) apiUrl: string) {
     this.profileUrl = apiUrl.endsWith('/') ? apiUrl + 'profile' : apiUrl + '/profile';
   }
 
