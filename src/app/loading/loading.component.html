@@ -1,0 +1,4 @@
+<div class="active" *ngIf="active" @showState>
+  <div class="drawer-pf-loading"></div>
+</div>
+<ng-content *ngIf="!active" @showState></ng-content>
