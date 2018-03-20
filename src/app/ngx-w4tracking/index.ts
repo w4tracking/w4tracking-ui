@@ -1,4 +1,4 @@
-export { W4TrackingModule } from './w4tracking.module';
+export { NgxW4TrackingModule } from './ngx-w4tracking.module';
 
 // Contexts
 export { ContextType } from './contexts/context-type';

@@ -8,6 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 
+// Ngx
+import { NgxBaseModule } from './ngx-base/ngx-base.module';
+import { NxgLoginModule } from './ngx-login-client/ngx-login.module';
+import { NgxW4TrackingModule } from './ngx-w4tracking/ngx-w4tracking.module';
+
+import { ssoApiUrlProvider } from './shared/sso-api.provider';
+import { authApiUrlProvider } from './shared/auth-api.provider';
+import { realmProvider } from './shared/realm-token.provider';
 
 @NgModule({
   declarations: [
@@ -16,9 +24,18 @@ import { HeaderComponent } from './layout/header/header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    NgxBaseModule.forRoot(),
+    NxgLoginModule.forRoot(),
+    NgxW4TrackingModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    // Ngx
+    ssoApiUrlProvider,
+    authApiUrlProvider,
+    realmProvider,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

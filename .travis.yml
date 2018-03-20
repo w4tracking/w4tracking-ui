@@ -5,7 +5,7 @@ language: node_js
 
 addons:
   sonarcloud:
-    organization: clarksnut
+    organization: w4tracking
     token:
       secure: $SONAR_TOKEN
 
