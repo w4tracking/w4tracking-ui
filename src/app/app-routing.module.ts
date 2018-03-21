@@ -25,6 +25,18 @@ const routes: Routes = [
       title: 'Error'
     }
   },
+
+  // Dashboard
+  {
+    path: '_companies/:company',
+    resolve: {
+      // context: ContextResolver
+    },
+    loadChildren: './company/dashboard/dashboard.module#DashboardModule',
+    data: {
+      title: 'Dashboard'
+    }
+  },
 ];
 
 @NgModule({
