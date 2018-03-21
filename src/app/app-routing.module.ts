@@ -16,6 +16,15 @@ const routes: Routes = [
       title: 'Home'
     }
   },
+
+  // Error Pages
+  {
+    path: '_error',
+    loadChildren: './layout/error/error.module#ErrorModule',
+    data: {
+      title: 'Error'
+    }
+  },
 ];
 
 @NgModule({
