@@ -1,0 +1,32 @@
+<div *ngIf="activityItems.length === 0; then showBlankState else showActivityItems"></div>
+<ng-template #showBlankState>
+  <div class="col-sm-12">
+    <div class="blank-slate-pf">
+      <h1>No existe actividad que mostrar</h1>
+      <p>Ir a la página
+        <a href="javascript:void(0)" [routerLink]="['/', '_home']">Home</a> para empezar a usar W4Tracking.</p>
+      <div class="blank-slate-pf-main-action">
+        <button class="btn btn-primary btn-lg">Empezar a Usar</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #showActivityItems>
+  <h2 class="margin-left-15">Actividad reciente de Username</h2>
+  <div class="col-sm-12">
+    <ul class="list-group list-view-pf list-view-pf-view">
+      <!-- <li class="list-group-item" *ngFor="let activity of activityItems | take: 10">
+        <div class="list-view-pf-main-info">
+          <div class="list-view-pf-body">
+            <div class="list-view-pf-description">
+              <div class="list-group-item-text margin-right-0">
+                <span>{{activity.what}}</span>
+                <span class="pull-right">{{activity.when}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</ng-template>

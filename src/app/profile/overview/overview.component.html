@@ -1,0 +1,56 @@
+<div class="container content padding-top-15">
+  <div class="row">
+    <h1>Perfil</h1>
+    <!-- left column -->
+    <div class="col-xs-12 col-sm-3 col-md-2">
+      <div>
+        <a href="javascript:void(0)">
+          <img src="assets/images/profile-user.png" class="img-responsive profile-img-none">
+          <span class="pficon pficon-edit edit-profile-img"></span>
+        </a>
+
+        <h3 class="col-sm-12 profile-wrapper-username">Nombre completo</h3>
+        <p class="col-sm-12 profile-wrapper-username">
+          Usuario
+        </p>
+        <hr>
+
+        <p class="col-sm-12 profile-wrapper-email">
+          <span class="fa fa-envelope"></span>
+          <a href="javascript:void(0)">Agregar email</a>
+        </p>
+
+        <p class="col-sm-12 profile-wrapper-url">
+          <span class="fa fa-external-link"></span>
+          <a href="javascript:void(0)">Agregar URL</a>
+        </p>
+
+        <p class="col-sm-12 profile-wrapper-bio">
+          <a href="javascript:void(0)">Agregar biografia</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- center column -->
+    <div class="col-xs-12 col-sm-8 col-md-8 nav-tabs-area">
+      <tabset #staticTabs>
+        <tab heading="Actividad">
+          <div class="overview-nav-tab-content">
+            <w4-activity></w4-activity>
+          </div>
+        </tab>
+        <tab>
+          <ng-template tabHeading>Companias
+            <span class="badge">2</span>
+          </ng-template>
+          <div class="overview-nav-tab-content">
+            <w4-companies></w4-companies>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+
+    <!-- right column -->
+    <button class="col-xs-12 col-sm-1 col-md-2 btn btn-lg btn-default profile-update-button" (click)="routeToUpdateProfile()">Actualizar Perfil</button>
+  </div>
+</div>

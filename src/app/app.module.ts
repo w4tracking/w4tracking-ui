@@ -13,6 +13,7 @@ import { ApiLocatorService } from './shared/api-locator.service';
 
 // Bootstrap
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 // Error
 import { ErrorService } from './layout/error/error.service';
@@ -34,7 +35,9 @@ import { realmProvider } from './shared/realm-token.provider';
     BrowserModule,
     AppRoutingModule,
 
+    // Bootstrap
     BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
 
     NgxBaseModule.forRoot(),
     NxgLoginModule.forRoot(),
