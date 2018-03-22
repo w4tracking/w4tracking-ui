@@ -23,7 +23,7 @@ export class ErrorComponent implements OnDestroy {
   message = '';
   subscription: Subscription;
   hideBanner: boolean;
-  spaceLink: string;
+  companyLink: string;
   userSubscription: Subscription;
 
   constructor(
@@ -38,7 +38,7 @@ export class ErrorComponent implements OnDestroy {
 
     this.userSubscription = userService.loggedInUser.subscribe(val => {
       if (val.id) {
-        this.spaceLink = '/' + val.attributes.username + '/_companies';
+        this.companyLink = '/' + val.attributes.username + '/_companies';
       }
     });
   }
