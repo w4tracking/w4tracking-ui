@@ -19,10 +19,10 @@
         </a>
         <ul *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu3">
           <li>
-            <a href="#">Help</a>
+            <a href="#">Ayuda</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#">Acerda de Mi</a>
           </li>
         </ul>
       </li>
@@ -34,16 +34,16 @@
         </a>
         <ul *dropdownMenu class="dropdown-menu">
           <li>
-            <a href="#">Link</a>
+            <a href="#">Administrar cuenta</a>
           </li>
           <li>
-            <a href="#">Another link</a>
-          </li>
-          <li>
-            <a href="#">Something else here</a>
+            <a href="#">Información del Servidor</a>
           </li>
           <li class="divider"></li>
-          <li class="dropdown-submenu">
+          <li>
+            <a href="#">Cerrar Session</a>
+          </li>
+          <!-- <li class="dropdown-submenu">
             <a tabindex="-1" href="#">More options</a>
             <ul class="dropdown-menu">
               <li>
@@ -65,11 +65,7 @@
                 <a href="#">One more separated link</a>
               </li>
             </ul>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <a href="#">One more separated link</a>
-          </li>
+          </li> -->
         </ul>
       </li>
     </ul>
@@ -84,56 +80,38 @@
             </span>
           </button>
           <div *dropdownMenu class="dropdown-menu open" role="combobox" style="max-height: 221px; overflow: hidden; min-height: 117px;">
-            <div class="bs-searchbox">
+            <!-- <div class="bs-searchbox">
               <input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search">
-            </div>
+            </div> -->
             <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 175px; overflow-y: auto; min-height: 71px;">
               <li class="dropdown-header " data-optgroup="1">
-                <span class="text">Context Label</span>
+                <span class="text">Empresas</span>
               </li>
               <li data-original-index="0" data-optgroup="1" class="selected active">
                 <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
-                  <span class="text">First Option</span>
+                  <span class="text">Crear Empresa</span>
                   <span class="glyphicon glyphicon-ok check-mark"></span>
                 </a>
               </li>
               <li data-original-index="1" data-optgroup="1">
                 <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                  <span class="text">Another Option</span>
-                  <span class="glyphicon glyphicon-ok check-mark"></span>
-                </a>
-              </li>
-              <li data-original-index="2" data-optgroup="1">
-                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                  <span class="text">And Another</span>
-                  <span class="glyphicon glyphicon-ok check-mark"></span>
-                </a>
-              </li>
-              <li data-original-index="3" data-optgroup="1">
-                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                  <span class="text">Fourth Option That Is a Lot Longer And Will Be Too Long At Small Resolutions</span>
+                  <span class="text">Solicitar Acceso</span>
                   <span class="glyphicon glyphicon-ok check-mark"></span>
                 </a>
               </li>
               <li class="divider" data-original-index="4"></li>
               <li data-original-index="5" data-optgroup="1">
                 <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                  <span class="text">Fifth Option
-                    <small class="text-muted">supplemental data</small>
+                  <span class="text">Crear Documento
+                    <small class="text-muted">virtual</small>
                   </span>
-                  <span class="glyphicon glyphicon-ok check-mark"></span>
-                </a>
-              </li>
-              <li data-original-index="6" data-optgroup="1" class="disabled">
-                <a tabindex="-1" class="opt  " data-tokens="null" role="option" href="#" aria-disabled="true" aria-selected="false">
-                  <span class="text">Disabled Option</span>
                   <span class="glyphicon glyphicon-ok check-mark"></span>
                 </a>
               </li>
               <li data-original-index="7" data-optgroup="1">
                 <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                  <span class="text">Final Option
-                    <small class="text-muted">end</small>
+                  <span class="text">Iniciar Documento
+                    <small class="text-muted">registrar</small>
                   </span>
                   <span class="glyphicon glyphicon-ok check-mark"></span>
                 </a>

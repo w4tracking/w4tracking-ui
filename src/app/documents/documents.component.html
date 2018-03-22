@@ -1,7 +1,293 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-9 col-md-10 col-sm-push-3 col-md-push-2">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget eros tincidunt, semper ante nec, dapibus ante.</p>
+
+
+
+      <ol class="breadcrumb">
+        <li>
+          <a href="#">Documents</a>
+        </li>
+        <li>Empresa1</li>
+      </ol>
+
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="#">Todas mis Empresas</a>
+        </li>
+        <li>
+          <a href="#">Empresa2</a>
+        </li>
+        <li>
+          <a href="#">Empresa3</a>
+        </li>
+        <li>
+          <a href="#">Empresa4</a>
+        </li>
+        <li>
+          <a href="#">Empresa5</a>
+        </li>
+        <li>
+          <a href="#">Empresa6</a>
+        </li>
+      </ul>
+      <ul class="nav nav-tabs nav-tabs-pf">
+        <li class="active">
+          <a href="#">Todas mis Areas</a>
+        </li>
+        <li>
+          <a href="#">Area2</a>
+        </li>
+        <li>
+          <a href="#">Area3</a>
+        </li>
+        <li>
+          <a href="#">Area4</a>
+        </li>
+        <li>
+          <a href="#">Area5</a>
+        </li>
+      </ul>
+
+      <br/>
+
+      <div class="row toolbar-pf table-view-pf-toolbar" id="toolbar1">
+        <div class="col-sm-12">
+          <form class="toolbar-pf-actions">
+            <div class="form-group toolbar-pf-filter">
+              <label class="sr-only" for="filter">Rendering Engine</label>
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" id="filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rendering Engine
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="#" id="filter1">Rendering Engine</a>
+                    </li>
+                    <li>
+                      <a href="#" id="filter2">Browser</a>
+                    </li>
+                    <li>
+                      <a href="#" id="filter3">Platform(s)</a>
+                    </li>
+                    <li>
+                      <a href="#" id="filter4">Engine Version</a>
+                    </li>
+                    <li>
+                      <a href="#" id="filter5">CSS Grade</a>
+                    </li>
+                  </ul>
+                </div>
+                <input type="text" class="form-control" placeholder="Filter By Rendering Engine..." autocomplete="off" id="filterInput">
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-default" type="button" id="deleteRows1">Delete Rows</button>
+              <button class="btn btn-default" type="button" id="restoreRows1" disabled="">Restore Rows</button>
+              <div class="dropdown btn-group  dropdown-kebab-pf">
+                <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebab" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="true">
+                  <span class="fa fa-ellipsis-v"></span>
+                </button>
+                <ul class="dropdown-menu " aria-labelledby="dropdownKebab">
+                  <li>
+                    <a href="#">Action</a>
+                  </li>
+                  <li>
+                    <a href="#">Another Action</a>
+                  </li>
+                  <li>
+                    <a href="#">Something Else Here</a>
+                  </li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                    <a href="#">Separated Link</a>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+            <div class="toolbar-pf-action-right">
+              <div class="form-group toolbar-pf-find">
+                <button class="btn btn-link btn-find" type="button">
+                  <span class="fa fa-search"></span>
+                </button>
+                <div class="find-pf-dropdown-container">
+                  <input type="text" class="form-control" id="find" placeholder="Find By Keyword...">
+                  <div class="find-pf-buttons">
+                    <span class="find-pf-nums">1 of 3</span>
+                    <button class="btn btn-link" type="button">
+                      <span class="fa fa-angle-up"></span>
+                    </button>
+                    <button class="btn btn-link" type="button">
+                      <span class="fa fa-angle-down"></span>
+                    </button>
+                    <button class="btn btn-link btn-find-close" type="button">
+                      <span class="pficon pficon-close"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="row toolbar-pf-results">
+            <div class="col-sm-9">
+              <div class="hidden">
+                <h5>0 Results</h5>
+                <p>Active filters:</p>
+                <ul class="list-inline"></ul>
+                <p>
+                  <a href="#">Clear All Filters</a>
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-3 table-view-pf-select-results">
+              <strong>0</strong> of
+              <strong>0</strong> selected
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="table1_wrapper" class="dataTables_wrapper no-footer">
+        <table class="table table-striped table-bordered table-hover dataTable no-footer" id="table1" role="grid">
+          <thead>
+            <tr role="row">
+              <th class="table-view-pf-select sorting_disabled" rowspan="1" colspan="1">
+                <label class="sr-only" for="selectAll">Select all rows</label>
+                <input type="checkbox" id="selectAll" name="selectAll">
+              </th>
+              <th class="sorting" tabindex="0" aria-controls="table1" rowspan="1" colspan="1">Rendering Engine</th>
+              <th class="sorting" tabindex="0" aria-controls="table1" rowspan="1" colspan="1">Browser</th>
+              <th class="sorting" tabindex="0" aria-controls="table1" rowspan="1" colspan="1">Platform(s)</th>
+              <th class="sorting" tabindex="0" aria-controls="table1" rowspan="1" colspan="1">Engine Version</th>
+              <th class="sorting" tabindex="0" aria-controls="table1" rowspan="1" colspan="1">CSS Grade</th>
+              <th colspan="2" rowspan="1">Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <form class="content-view-pf-pagination table-view-pf-pagination clearfix" id="pagination1">
+        <div class="form-group">
+          <div class="btn-group bootstrap-select pagination-pf-pagesize">
+            <button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="15">
+              <span class="filter-option pull-left">15</span>&nbsp;
+              <span class="bs-caret">
+                <span class="caret"></span>
+              </span>
+            </button>
+            <div class="dropdown-menu open" role="combobox">
+              <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
+                <li data-original-index="0">
+                  <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                    <span class="text">6</span>
+                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                  </a>
+                </li>
+                <li data-original-index="1">
+                  <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                    <span class="text">10</span>
+                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                  </a>
+                </li>
+                <li data-original-index="2" class="selected">
+                  <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                    <span class="text">15</span>
+                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                  </a>
+                </li>
+                <li data-original-index="3">
+                  <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                    <span class="text">25</span>
+                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                  </a>
+                </li>
+                <li data-original-index="4">
+                  <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                    <span class="text">50</span>
+                    <span class="glyphicon glyphicon-ok check-mark"></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <select class="selectpicker pagination-pf-pagesize" tabindex="-98">
+              <option value="6">6</option>
+              <option value="10">10</option>
+              <option value="15" selected="selected">15</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+          <span>per page</span>
+        </div>
+        <div class="form-group">
+          <span>
+            <span class="pagination-pf-items-current">1-15</span> of
+            <span class="pagination-pf-items-total">75</span>
+          </span>
+          <ul class="pagination pagination-pf-back">
+            <li class="disabled">
+              <a href="#" title="First Page">
+                <span class="i fa fa-angle-double-left"></span>
+              </a>
+            </li>
+            <li class="disabled">
+              <a href="#" title="Previous Page">
+                <span class="i fa fa-angle-left"></span>
+              </a>
+            </li>
+          </ul>
+          <label for="pagination1-page" class="sr-only">Current Page</label>
+          <input class="pagination-pf-page" type="text" value="1" id="pagination1-page">
+          <span>of
+            <span class="pagination-pf-pages">5</span>
+          </span>
+          <ul class="pagination pagination-pf-forward">
+            <li>
+              <a href="#" title="Next Page">
+                <span class="i fa fa-angle-right"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" title="Last Page">
+                <span class="i fa fa-angle-double-right"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </form>
+
+      <div class="blank-slate-pf table-view-pf-empty hidden" id="emptyState1">
+        <div class="blank-slate-pf-icon">
+          <span class="pficon pficon pficon-add-circle-o"></span>
+        </div>
+        <h1>
+          Empty State Title
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>
+          Learn more about this
+          <a href="#">on the documentation</a>.
+        </p>
+        <div class="blank-slate-pf-main-action">
+          <button class="btn btn-primary btn-lg"> Main Action </button>
+        </div>
+        <div class="blank-slate-pf-secondary-action">
+          <button class="btn btn-default">Secondary Action</button>
+          <button class="btn btn-default">Secondary Action</button>
+        </div>
+      </div>
+
+
+
+
+
     </div>
     <!-- /col -->
     <div class="col-sm-3 col-md-2 col-sm-pull-9 col-md-pull-10 sidebar-pf sidebar-pf-left">
@@ -10,15 +296,15 @@
         <ul class="nav nav-pills nav-stacked">
           <li class="active">
             <a href="#">
-              <i class="fa fa-desktop"></i>System Information</a>
+              <i class="fa fa-desktop"></i>Todos</a>
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-cog"></i>System Services</a>
+              <i class="fa fa-cog"></i>Como cliente</a>
           </li>
           <li>
             <a href="#">
-              <i class="fa fa-file-text-o"></i>Journal</a>
+              <i class="fa fa-file-text-o"></i>Como Trabajador</a>
           </li>
           <li>
             <a href="#">
