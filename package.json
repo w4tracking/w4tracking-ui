@@ -9,7 +9,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ci:travis": "npm run lint && npm run build --prod --aot --build-optimizer"
+    "build:aot": "ng build --aot",
+    "build:aot:prod": "ng build --prod --aot --build-optimizer",
+    "ci:travis": "npm run lint && npm run build:aot",
+    "build:docker": "npm run build:aot:prod && docker build -t w4tracking/w4tracking-ui:latest . && docker build -t w4tracking/w4tracking-ui-openshift -f Dockerfile.deploy .",
+    "docker": "docker"
   },
   "private": true,
   "dependencies": {
