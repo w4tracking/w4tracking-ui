@@ -1,0 +1,165 @@
+<nav class="navbar navbar-default navbar-pf" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      <img src="assets/images/brand.svg" alt="PatternFly Enterprise Application" />
+    </a>
+  </div>
+  <div class="collapse navbar-collapse navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-utility">
+      <li dropdown class="dropdown">
+        <a dropdownToggle class="nav-item-iconic" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <span title="Help" class="fa pficon-help"></span>
+          <span class="caret"></span>
+        </a>
+        <ul *dropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu3">
+          <li>
+            <a href="#">Help</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </li>
+      <li dropdown class="dropdown">
+        <a dropdownToggle class="dropdown-toggle" data-toggle="dropdown">
+          <span class="pficon pficon-user"></span>
+          Brian Johnson
+          <b class="caret"></b>
+        </a>
+        <ul *dropdownMenu class="dropdown-menu">
+          <li>
+            <a href="#">Link</a>
+          </li>
+          <li>
+            <a href="#">Another link</a>
+          </li>
+          <li>
+            <a href="#">Something else here</a>
+          </li>
+          <li class="divider"></li>
+          <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">More options</a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Link</a>
+              </li>
+              <li>
+                <a href="#">Another link</a>
+              </li>
+              <li>
+                <a href="#">Something else here</a>
+              </li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li>
+                <a href="#">Separated link</a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <a href="#">One more separated link</a>
+              </li>
+            </ul>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">One more separated link</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-primary">
+      <li class="context context-bootstrap-select">
+        <div dropdown class="btn-group bootstrap-select open">
+          <button dropdownToggle type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="First Option"
+            aria-expanded="false">
+            <span class="filter-option pull-left">First Option</span>&nbsp;
+            <span class="bs-caret">
+              <span class="caret"></span>
+            </span>
+          </button>
+          <div *dropdownMenu class="dropdown-menu open" role="combobox" style="max-height: 221px; overflow: hidden; min-height: 117px;">
+            <div class="bs-searchbox">
+              <input type="text" class="form-control" autocomplete="off" role="textbox" aria-label="Search">
+            </div>
+            <ul class="dropdown-menu inner" role="listbox" aria-expanded="false" style="max-height: 175px; overflow-y: auto; min-height: 71px;">
+              <li class="dropdown-header " data-optgroup="1">
+                <span class="text">Context Label</span>
+              </li>
+              <li data-original-index="0" data-optgroup="1" class="selected active">
+                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+                  <span class="text">First Option</span>
+                  <span class="glyphicon glyphicon-ok check-mark"></span>
+                </a>
+              </li>
+              <li data-original-index="1" data-optgroup="1">
+                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                  <span class="text">Another Option</span>
+                  <span class="glyphicon glyphicon-ok check-mark"></span>
+                </a>
+              </li>
+              <li data-original-index="2" data-optgroup="1">
+                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                  <span class="text">And Another</span>
+                  <span class="glyphicon glyphicon-ok check-mark"></span>
+                </a>
+              </li>
+              <li data-original-index="3" data-optgroup="1">
+                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                  <span class="text">Fourth Option That Is a Lot Longer And Will Be Too Long At Small Resolutions</span>
+                  <span class="glyphicon glyphicon-ok check-mark"></span>
+                </a>
+              </li>
+              <li class="divider" data-original-index="4"></li>
+              <li data-original-index="5" data-optgroup="1">
+                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                  <span class="text">Fifth Option
+                    <small class="text-muted">supplemental data</small>
+                  </span>
+                  <span class="glyphicon glyphicon-ok check-mark"></span>
+                </a>
+              </li>
+              <li data-original-index="6" data-optgroup="1" class="disabled">
+                <a tabindex="-1" class="opt  " data-tokens="null" role="option" href="#" aria-disabled="true" aria-selected="false">
+                  <span class="text">Disabled Option</span>
+                  <span class="glyphicon glyphicon-ok check-mark"></span>
+                </a>
+              </li>
+              <li data-original-index="7" data-optgroup="1">
+                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                  <span class="text">Final Option
+                    <small class="text-muted">end</small>
+                  </span>
+                  <span class="glyphicon glyphicon-ok check-mark"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <select class="selectpicker" data-live-search="true" tabindex="-98">
+            <optgroup label="Context Label">
+              <option>First Option</option>
+              <option>Another Option</option>
+              <option>And Another</option>
+              <option>Fourth Option That Is a Lot Longer And Will Be Too Long At Small Resolutions</option>
+              <option data-divider="true"></option>
+              <option data-subtext="supplemental data">Fifth Option</option>
+              <option disabled="">Disabled Option</option>
+              <option data-subtext="end">Final Option</option>
+            </optgroup>
+          </select>
+        </div>
+      </li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/_home">Documentos</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/_home/_companies">Empresas</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -6,11 +6,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layout/header/header.component';
 
 // Api Config
 import { w4trackingUIConfigProvider } from './shared/w4tracking-ui-config.service';
 import { ApiLocatorService } from './shared/api-locator.service';
+
+// Bootstrap
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 // Error
 import { ErrorService } from './layout/error/error.service';
@@ -27,15 +29,16 @@ import { realmProvider } from './shared/realm-token.provider';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
 
+    BsDropdownModule.forRoot(),
+
     NgxBaseModule.forRoot(),
     NxgLoginModule.forRoot(),
-    NgxW4TrackingModule.forRoot(),
+    NgxW4TrackingModule.forRoot()
   ],
   providers: [
     // Api Config

@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HorizontalNavigationComponent } from './layout/horizontal-navigation/horizontal-navigation.component';
+import { VerticalNavigationComponent } from './layout/vertical-navigation/vertical-navigation.component';
+
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: './home/home.module#HomeModule',
+    redirectTo: '_home',
     pathMatch: 'full'
   },
 
@@ -24,19 +28,7 @@ const routes: Routes = [
     data: {
       title: 'Error'
     }
-  },
-
-  // Dashboard
-  {
-    path: '_companies/:company',
-    resolve: {
-      // context: ContextResolver
-    },
-    loadChildren: './company/dashboard/dashboard.module#DashboardModule',
-    data: {
-      title: 'Dashboard'
-    }
-  },
+  }
 ];
 
 @NgModule({

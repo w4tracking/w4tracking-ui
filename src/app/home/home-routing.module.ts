@@ -6,7 +6,21 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: '../documents/documents.module#DocumentsModule',
+      },
+      {
+        path: '_documents',
+        loadChildren: '../documents/documents.module#DocumentsModule',
+      },
+      {
+        path: '_companies',
+        loadChildren: '../companies/companies.module#CompaniesModule',
+      }
+    ]
   }
 ];
 
