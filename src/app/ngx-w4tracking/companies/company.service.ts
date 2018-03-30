@@ -17,16 +17,12 @@ export class CompanyService {
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   private companiesUrl: string;
 
-  private nextLinkOwnedNamedSpaces: string = null;
-  private nextLinkOwnedCollaboratedSpaces: string = null;
-
   constructor(
     private http: HttpClient,
     private logger: Logger,
     private userService: UserService,
     @Inject(W4TRACKING_API_URL) apiUrl: string) {
-    this.companiesUrl = apiUrl.endsWith('/') ? apiUrl + 'spaces' : apiUrl + '/spaces';
-    this.companiesUrl = apiUrl.endsWith('/') ? apiUrl + 'users' : apiUrl + '/users';
+    this.companiesUrl = apiUrl.endsWith('/') ? apiUrl + 'companies' : apiUrl + '/companies';
   }
 
   /**

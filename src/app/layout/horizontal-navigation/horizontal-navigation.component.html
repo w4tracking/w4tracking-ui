@@ -29,7 +29,7 @@
       <li dropdown class="dropdown">
         <a dropdownToggle class="dropdown-toggle" data-toggle="dropdown">
           <span class="pficon pficon-user"></span>
-          Brian Johnson
+          {{loggedInUser?.attributes?.username}}
           <b class="caret"></b>
         </a>
         <ul *dropdownMenu class="dropdown-menu">
@@ -72,9 +72,9 @@
     <ul class="nav navbar-nav navbar-primary">
       <li class="context context-bootstrap-select">
         <div dropdown class="btn-group bootstrap-select open">
-          <button dropdownToggle type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="First Option"
+          <button dropdownToggle type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" title="Acciones"
             aria-expanded="false">
-            <span class="filter-option pull-left">First Option</span>&nbsp;
+            <span class="filter-option pull-left">Acciones</span>&nbsp;
             <span class="bs-caret">
               <span class="caret"></span>
             </span>
@@ -87,8 +87,8 @@
               <li class="dropdown-header " data-optgroup="1">
                 <span class="text">Empresas</span>
               </li>
-              <li data-original-index="0" data-optgroup="1" class="selected active">
-                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
+              <li data-original-index="0" data-optgroup="1">
+                <a (click)="createCompanyWizard.open()" tabindex="0" class="opt" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
                   <span class="text">Crear Empresa</span>
                   <span class="glyphicon glyphicon-ok check-mark"></span>
                 </a>
@@ -101,7 +101,7 @@
               </li>
               <li class="divider" data-original-index="4"></li>
               <li data-original-index="5" data-optgroup="1">
-                <a tabindex="0" class="opt  " data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
+                <a tabindex="0" class="opt" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
                   <span class="text">Crear Documento
                     <small class="text-muted">virtual</small>
                   </span>
@@ -141,3 +141,6 @@
     </ul>
   </div>
 </nav>
+
+<!-- Create Company Wizard -->
+<w4-company-wizard #createCompanyWizard></w4-company-wizard>

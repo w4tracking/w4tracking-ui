@@ -2,6 +2,7 @@ import './rxjs-extensions';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,6 +27,11 @@ import { NgxW4TrackingModule } from './ngx-w4tracking/ngx-w4tracking.module';
 import { ssoApiUrlProvider } from './shared/sso-api.provider';
 import { authApiUrlProvider } from './shared/auth-api.provider';
 import { realmProvider } from './shared/realm-token.provider';
+import { w4trackingApiUrlProvider } from './shared/w4tracking-api.provider';
+
+// Keycloak
+import { KeycloakService } from './keycloak-service/keycloak.service';
+import { KEYCLOAK_HTTP_INTERCEPTOR } from './keycloak-service/keycloak.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,6 +40,7 @@ import { realmProvider } from './shared/realm-token.provider';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
 
     // Bootstrap
     BsDropdownModule.forRoot(),
@@ -55,6 +62,11 @@ import { realmProvider } from './shared/realm-token.provider';
     ssoApiUrlProvider,
     authApiUrlProvider,
     realmProvider,
+    w4trackingApiUrlProvider,
+
+    // Keycloak
+    KeycloakService,
+    KEYCLOAK_HTTP_INTERCEPTOR,
   ],
   bootstrap: [AppComponent]
 })

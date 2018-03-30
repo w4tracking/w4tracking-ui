@@ -1,3 +1,81 @@
-<p>
-  company-wizard works!
-</p>
+<ng-template #wizardTemplate>
+
+    <pfng-wizard #wizard [config]="wizardConfig" (onCancel)="cancel($event)" (onNext)="nextClicked($event)" (onStepChange)="stepChanged($event, wizard)">
+        <!-- Step 1A: Details -->
+        <pfng-wizard-step [config]="step1Config">
+            <pfng-wizard-substep [config]="step1aConfig" [reviewTemplate]="step1aReviewTemplate">
+                <form [formGroup]="companyForm" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label required-pf">Nombre</label>
+                        <div class="col-sm-9">
+                            <input formControlName="name" type="text" class="form-control" autofocus/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Descripcion</label>
+                        <div class="col-sm-9">
+                            <textarea formControlName="description" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </pfng-wizard-substep>
+            <pfng-wizard-substep [config]="step1bConfig">
+                <form [formGroup]="termsAndConditionsForm" class="form-horizontal">
+                    <h1>Terminos y condiciones</h1>
+                    <div class="checkbox">
+                        <label>
+                            <input formControlName="agree" type="checkbox"> Aceptar
+                        </label>
+                    </div>
+                </form>
+            </pfng-wizard-substep>
+        </pfng-wizard-step>
+
+        <!-- Step 2A: Settings -->
+        <pfng-wizard-step [config]="step2Config">
+            <pfng-wizard-substep [config]="step2aConfig">
+                <pfng-wizard-review></pfng-wizard-review>
+            </pfng-wizard-substep>
+            <pfng-wizard-substep [config]="step2bConfig" (onShow)="save()">
+                <div class="wizard-pf-contents">
+                    <div class="wizard-pf-process blank-slate-pf" *ngIf="working">
+                        <div class="spinner spinner-lg blank-slate-pf-icon"></div>
+                        <h3 class="blank-slate-pf-main-action">Creacion en progreso</h3>
+                        <p class="blank-slate-pf-secondary-action">Por favor espere.
+                        </p>
+                    </div>
+                    <div class="wizard-pf-complete blank-slate-pf" *ngIf="!working">
+                        <div *ngIf="success">
+                            <div class="wizard-pf-success-icon">
+                                <span class="glyphicon glyphicon-ok-circle"></span>
+                            </div>
+                            <h3 class="blank-slate-pf-main-action">Compania creada</h3>
+                        </div>
+                        <div *ngIf="!success">
+                            <div class="wizard-pf-success-icon">
+                                <span class="pficon pficon-warning-triangle-o"></span>
+                            </div>
+                            <h3 class="blank-slate-pf-main-action">Ups! Algo inesperado occurio. Por favor, vuelva a intentarlo más tarde.</h3>
+                        </div>
+                    </div>
+                </div>
+            </pfng-wizard-substep>
+        </pfng-wizard-step>
+
+    </pfng-wizard>
+
+    <!-- Step B: Review -->
+    <ng-template #step1aReviewTemplate>
+        <form class="form">
+            <div class="wizard-pf-review-item">
+                <span class="wizard-pf-review-item-label">Nombre:</span>
+                <span class="wizard-pf-review-item-value">{{companyForm?.value?.name}}</span>
+            </div>
+            <div class="wizard-pf-review-item">
+                <span class="wizard-pf-review-item-label">Descripcion:</span>
+                <span class="wizard-pf-review-item-value">{{companyForm?.value?.description}}</span>
+            </div>
+        </form>
+    </ng-template>
+
+</ng-template>
