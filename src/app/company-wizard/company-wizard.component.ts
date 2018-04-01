@@ -1,6 +1,7 @@
 import {
   Component,
   OnInit,
+  OnDestroy,
   ViewChild,
   TemplateRef
 } from '@angular/core';
@@ -20,17 +21,20 @@ import {
 } from 'patternfly-ng/wizard';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Notification, NotificationAction, Notifications, NotificationType } from './../ngx-base';
-import { UserService } from './../ngx-login-client';
+import { User, UserService } from './../ngx-login-client';
 import { Company, CompanyService } from './../ngx-w4tracking';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'w4-company-wizard',
   templateUrl: './company-wizard.component.html',
   styleUrls: ['./company-wizard.component.scss']
 })
-export class CompanyWizardComponent implements OnInit {
+export class CompanyWizardComponent implements OnInit, OnDestroy {
 
   @ViewChild('wizardTemplate') wizardTemplate: TemplateRef<any>;
+
+  loggedInUser: User;
 
   working = false;
   success = false;
@@ -54,6 +58,8 @@ export class CompanyWizardComponent implements OnInit {
   // Modal
   private modalRef: BsModalRef;
 
+  private subscriptions: Subscription[] = [];
+
   constructor(
     private formBuilder: FormBuilder,
     private modalService: BsModalService,
@@ -61,12 +67,20 @@ export class CompanyWizardComponent implements OnInit {
     private companyService: CompanyService,
     private notifications: Notifications
   ) {
-
+    this.subscriptions.push(
+      userService.loggedInUser.subscribe((val) => {
+        this.loggedInUser = val;
+      })
+    );
   }
 
   ngOnInit() {
     this.initForm();
     this.initWizard();
+  }
+
+  ngOnDestroy() {
+    this.subscriptions.forEach((subs) => subs.unsubscribe());
   }
 
   initForm() {
@@ -208,7 +222,7 @@ export class CompanyWizardComponent implements OnInit {
   save() {
     this.working = true;
 
-    let transientCompany = this.createTransientCompany();
+    const transientCompany = this.createTransientCompany();
     Object.assign(transientCompany.attributes, this.companyForm.value);
 
     this.companyService.create(transientCompany).subscribe(
@@ -229,8 +243,13 @@ export class CompanyWizardComponent implements OnInit {
 
   createTransientCompany(): Company {
     return {
-      attributes: {
-
+      attributes: {},
+      relationships: {
+        ownedBy: {
+          data: {
+            id: this.loggedInUser.id
+          }
+        }
       }
     } as Company;
   }

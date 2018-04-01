@@ -33,7 +33,7 @@ export class UserService {
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   private profileUrl: string; // URL to web api
   private usersUrl: string; // URL to web api
-  private searchUrl: string;
+  private usersSearchUrl: string;
 
   constructor(
     private http: HttpClient,
@@ -43,7 +43,7 @@ export class UserService {
   ) {
     this.profileUrl = apiUrl + '/profile';
     this.usersUrl = apiUrl + '/users';
-    this.usersUrl = apiUrl + '/users/search';
+    this.usersSearchUrl = apiUrl + '/users/search';
     this.loggedInUser = this.http
       .get(this.profileUrl, { headers: this.headers })
       .map(response => cloneDeep(response['data'] as User))
